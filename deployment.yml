@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mysql-spring
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: mysql-spring
+  template:
+    metadata:
+      labels:
+        app: mysql-spring
+    spec:
+      containers:
+      - name: mysql-spring
+        image: <Image>
+        resources:
+          limits:
+            memory: "128Mi"
+            cpu: "500m"
+        ports:
+        - containerPort: 9090
