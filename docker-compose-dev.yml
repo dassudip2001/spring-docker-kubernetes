@@ -1,0 +1,12 @@
+version: '3.4'
+
+services:
+  cardoperationmysql:
+    image: cardoperationmysql
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    volumes:
+    - . : .  
+    ports:
+      - 9090:9090
