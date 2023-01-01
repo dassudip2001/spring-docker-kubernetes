@@ -49,7 +49,7 @@ public class UserController {
 
     // put the user
        // update
-       @PutMapping("user/{id}")
+       @PutMapping("users/{id}")
        Optional<Object> updateUser(@RequestBody User newUser,@PathVariable int  id){
            return repository.findById(id)
            .map(user->{
